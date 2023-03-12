@@ -1,6 +1,7 @@
 package errm
 
 import (
+	"fmt"
 	"log"
 	"path/filepath"
 	"runtime"
@@ -11,6 +12,7 @@ var racinefillename string
 
 func init() {
 	_, file2, _, _ := runtime.Caller(0)
+	fmt.Println("ALANN", file2)
 	rfille := (filepath.Dir(filepath.Dir(filepath.Dir(file2))))
 	racinefillename = filepath.Base(rfille)
 }
