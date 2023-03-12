@@ -1,7 +1,6 @@
 package errm
 
 import (
-	"fmt"
 	"log"
 	"path/filepath"
 	"runtime"
@@ -10,11 +9,10 @@ import (
 
 var racinefillename string
 
-func init() {
-	_, file2, _, _ := runtime.Caller(0)
-	fmt.Println("ALANN", file2)
-	rfille := (filepath.Dir(filepath.Dir(filepath.Dir(file2))))
-	racinefillename = filepath.Base(rfille)
+// call this function to setup racine project folder name
+func InitRacine() {
+	_, file2, _, _ := runtime.Caller(1)
+	racinefillename = filepath.Base(filepath.Dir(file2))
 }
 
 func LogErr(err error) {
